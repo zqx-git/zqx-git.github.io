@@ -1,0 +1,107 @@
+.bgc {
+  height: 100%;
+  width: 100%;
+  background-color: #f3f3f3;
+  position: relative;
+}
+
+.bgc .header {
+  width: 100%;
+}
+
+.bgc .text {
+  display: inline-block;
+  width: 0.14rem;
+  color: black;
+  font-size: 0.14rem;
+  margin: 0.3rem 0 0 0.6rem;
+}
+
+.bgc>img.cover {
+  position: absolute;
+  top: 10%;
+  right: 15%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+}
+
+.bgc .introduce {
+  /* background-color: rgb(250, 174, 174); */
+  position: absolute;
+  top: 20%;
+  right: 15%;
+  font-size: 0.12rem;
+  text-align: right;
+  line-height: 0.18rem;
+  width: 2.2rem;
+}
+
+.bgc .imgs {
+  height: 6rem;
+}
+
+.bgc .imgs>img {
+  display: block;
+  width: 100%;
+}
+
+.bgc .imgs p {
+  font-size: 0.14rem;
+  text-align: center;
+  line-height: 0.2rem;
+  margin: 0.15rem;
+}
+
+.bgc .imgs .scollimg {
+  width: 3.75rem;
+  overflow-x: scroll;
+}
+
+.bgc .imgs .scollimg ul {
+  width: 16.18rem;
+}
+
+.bgc .imgs .scollimg ul li {
+  float: left;
+}
+
+.bgc .imgs .scollimg ul li img {
+  height: 2.2rem;
+}
+
+h3 {
+  font-size: 0.24rem;
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+
+h6 {
+  font-size: 12px;
+  text-align: center;
+}
+
+.mzsm {
+  font-size: 12px;
+  text-align: center;
+  color: #666;
+}
+
+.foods,
+.foods span {
+  font-size: 12px;
+  color: #999;
+}
+
+/* span#busuanzi_value_site_uv,
+span#busuanzi_value_site_pv {
+  display: inline-block;
+  width: 12px;
+  font-size: 12px;
+  color: #999;
+} */
+
+div.white {
+  height: 0.2rem;
+  width: 100%;
+}
