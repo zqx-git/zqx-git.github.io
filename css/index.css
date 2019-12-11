@@ -9,6 +9,28 @@
   width: 100%;
 }
 
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.bgc .text {
+  font: 200% monospace;
+  border-bottom: .08em solid;
+  width: 28ch;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 10s steps(28, end), blink-caret .5s step-end infinite alternate;
+  /* 这里的alternate是为了让光标闪烁的正常一点 */
+}
+
 .bgc .text {
   display: inline-block;
   width: 0.14rem;
