@@ -1,122 +1,192 @@
-.bgc {
-  height: 100%;
-  width: 100%;
-  background-color: #f3f3f3;
+.top {
+  height: 4.2rem;
+  background-color: #fffaf3;
+  margin: 0.15rem 0;
+  padding: 0.3rem;
+  box-sizing: border-box;
   position: relative;
 }
 
-.bgc .header {
-  width: 100%;
-}
-
-@keyframes typing {
-  from {
-    width: 0
-  }
-}
-
-@keyframes blink-caret {
-  50% {
-    border-color: transparent;
-  }
-}
-
-.bgc .text {
-  font: 200% monospace;
-  border-bottom: .08em solid;
-  width: 28ch;
-  white-space: nowrap;
-  overflow: hidden;
-  animation: typing 10s steps(28, end), blink-caret .5s step-end infinite alternate;
-  /* 这里的alternate是为了让光标闪烁的正常一点 */
-}
-
-.bgc .text {
-  display: inline-block;
-  width: 0.14rem;
-  color: black;
-  font-size: 0.14rem;
-  margin: 0.3rem 0 0 0.6rem;
-}
-
-.bgc>img.cover {
-  position: absolute;
-  top: 10%;
-  right: 15%;
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 50%;
-}
-
-.bgc .introduce {
-  /* background-color: rgb(250, 174, 174); */
-  position: absolute;
-  top: 20%;
-  right: 15%;
-  font-size: 0.12rem;
-  text-align: right;
-  line-height: 0.18rem;
-  width: 2.2rem;
-}
-
-.bgc .imgs {
-  height: 6rem;
-}
-
-.bgc .imgs>img {
-  display: block;
-  width: 100%;
-}
-
-.bgc .imgs p {
-  font-size: 0.14rem;
-  text-align: center;
-  line-height: 0.2rem;
-  margin: 0.15rem;
-}
-
-.bgc .imgs .scollimg {
-  width: 3.75rem;
-  overflow-x: scroll;
-}
-
-.bgc .imgs .scollimg ul {
-  width: 16.18rem;
-}
-
-.bgc .imgs .scollimg ul li {
+.top .signature p {
   float: left;
+  width: 0.14rem;
+  height: 3rem;
+  font-size: 0.14rem;
+  margin: 0.05rem;
+  text-align: left;
 }
 
-.bgc .imgs .scollimg ul li img {
-  height: 2.2rem;
+.top .myinfo {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 2.5rem;
+  height: 3.3rem;
 }
 
-h3 {
-  font-size: 0.24rem;
-  text-align: center;
-  padding-bottom: 0.5rem;
+/* 头像自带背景光芒 */
+
+@-webkit-keyframes light {
+  0% {
+    box-shadow: 0 0 1rem rgb(255, 253, 133, 1);
+  }
+
+  50% {
+    box-shadow: 0 0 0.05rem rgba(255, 253, 133, 1);
+  }
+
+  100% {
+    box-shadow: 0 0 1rem rgba(255, 254, 165, 1);
+  }
 }
 
-h6 {
-  font-size: 14px;
-  text-align: center;
+@-moz-keyframes light {
+  0% {
+    box-shadow: 0 0 1rem rgba(255, 254, 165, 1);
+  }
+
+  50% {
+    box-shadow: 0 0 0.05rem rgba(255, 253, 133, 1);
+  }
+
+  100% {
+    box-shadow: 0 0 1rem rgba(255, 254, 165, 1);
+  }
+}
+
+@keyframes light {
+  0% {
+    box-shadow: 0 0 1rem rgba(255, 254, 165, 1);
+  }
+
+  50% {
+    box-shadow: 0 0 0.05rem rgba(255, 253, 133, 1);
+  }
+
+  100% {
+    box-shadow: 0 0 1rem rgba(255, 254, 165, 1);
+  }
+}
+
+.top .myinfo .beam {
+  z-index: -1;
+  position: absolute;
+  z-index: 3;
+  top: -0.2rem;
+  right: -0.4rem;
+  width: 2rem;
+  height: 4rem;
+  background: url(../img/beam.gif) no-repeat;
+  -webkit-transform: rotate(15deg);
+  transform: rotate(15deg);
+  -webkit-transform-origin: right top;
+  transform-origin: right top;
+  -webkit-animation: 5s linear 0s none infinite beam;
+  -moz-animation: 5s linear 0s none infinite beam;
+  animation: 5s linear 0s none infinite beam;
+}
+
+@-webkit-keyframes beam {
+  0% {
+    -webkit-transform: rotate(50deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(-15deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(50deg);
+  }
+}
+
+@keyframes beam {
+  0% {
+    transform: rotate(50deg);
+  }
+
+  50% {
+    transform: rotate(-15deg);
+  }
+
+  100% {
+    transform: rotate(50deg);
+  }
+}
+
+.top .myinfo img {
+  position: absolute;
+  top: 0.1rem;
+  right: 0.2rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background-color: #fefa90;
+  box-shadow: 0 0 0.5rem rgba(255, 253, 133, 1);
+  -webkit-animation: 3s linear 0s none infinite light;
+  -moz-animation: 3s linear 0s none infinite light;
+  animation: 3s linear 0s none infinite light;
+}
+
+.top .myinfo .introduce {
+  position: absolute;
+  top: 1rem;
+  right: 0.2rem;
+  text-align: right;
   color: #333;
+  font-size: 0.14rem;
 }
 
-.bgc .imgs p.mzsm {
-  font-size: 12px;
+.rotation {
+  height: 2.1094rem;
+  background-color: rgb(204, 255, 191);
+  margin-bottom: 0.15rem;
+}
+
+.skill {
+  position: relative;
+  height: 3rem;
+  background-color: rgb(255, 245, 191);
+  margin-bottom: 0.15rem;
+  /* padding: 20px; */
+}
+
+.story {
+  height: 3rem;
+  background-color: rgb(191, 255, 205);
+  margin-bottom: 0.15rem;
+}
+
+.poetry {
+  height: 3rem;
+  background-color: rgb(255, 206, 191);
+  margin-bottom: 0.15rem;
+}
+
+.photo {
+  height: 3rem;
+  background-color: rgb(197, 191, 255);
+  margin-bottom: 0.15rem;
+}
+
+.demo {
+  height: 3rem;
+  background-color: rgb(191, 255, 225);
+  margin-bottom: 0.15rem;
+}
+
+p.foods {
   text-align: center;
-  color: #888;
+  margin-bottom: 0.2rem;
 }
 
-.foods,
 .foods span {
-  font-size: 12px;
-  color: #999;
+  font-size: 0.12rem;
+  color: #777777;
 }
 
-div.white {
-  height: 0.2rem;
-  width: 100%;
+.foods span.zhengyibk {
+  display: block;
+  margin-top: 0.12rem;
+  color: #999999;
 }

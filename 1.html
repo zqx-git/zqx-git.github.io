@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
+  <title>Document</title>
+  <style>
+    .text {
+      width: 100%;
+      text-align: left;
+    }
+
+    p {
+      /* display: inline-block; */
+      float: left;
+      width: 14px;
+      height: 300px;
+      font-size: 14px;
+      margin: 10px;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="text">
+
+  </div>
+  <!-- <p><span id="qianming"></span><span id="gb">I</span></p> -->
+</body>
+</body>
+<script type="text/javascript">
+  // let aaa = '我是谁'
+  // let ppp = '<p>' + aaa + '</p>'
+  // $(".text").append(ppp)
+
+  var index = 0;
+  var text = '这是一句，qhio请求话这是.遇到逗号就换行吧.'
+  var reg = /[,；|，；|;；|；；|:；|：；|。;|.;]/g;
+  var arr = text.split(reg)
+  let len = arr.length
+  for (var i = 0; i < len; i++) {
+    let pp = '<p>' + arr[i] + '</p>'
+    $(".text").append(pp)
+  }
+  // setInterval(function () {
+  // $(".text").children('p')[0].innerText = this.text.substring(0, index++);
+  // }, 200);
+
+  // text = text.replace(reg, "$&\r\n");
+  // printer()
+  // 打字机效果
+  // 1 先把字符串按照标点符号切割成n段,一段段打印
+  console.log(arr)
+  // console.log(text)
+  // 2 竖行打印,遇到标点符号新建标签打印
+  function printer(text) {
+    // 打字效果
+
+    var l = this.text.length
+
+    // 0.5s循环判断是否结束 与 加换行
+    var init = setInterval(function () {
+        // 光标闪烁效果
+        $(".gb").fadeOut(300).fadeIn(300)
+        console.log(index)
+        console.log(l)
+        $(".qianming").innerText = this.text.substring(0, index++);
+        if (index > l) {
+          // 清除定时器
+          clearInterval(init)
+          // 移除光标节点
+          $(".gb").remove()
+        }
+      },
+      500)
+  }
+</script>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAD/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////ysrK/9LS0v///////////////////////////////////////////////////////////////////////////4aGhv+Li4v///////////////////////////////////////////////////////////////////////////+lpaX/bm5u//z8/P//////////////////////////////////////////////////////////////////////xcXF/1tbW//w8PD//////////////////////////////////////////////////////////////////////9/f3/9VVVX/3d3d///////////////////////////////////////////////////////////////////////y8vL/XV1d/8LCwv///////////////////////////////////////////////////////////////////////f39/3Jycv+jo6P///////////////////////////////////////////////////////////////////////////+Pj4//g4OD////////////////////////////////////////////////////////////////////////////sLCw/2hoaP/5+fn//////////////////////////////////////////////////////////////////////87Ozv9aWlr/7u7u///////////////////////////////////////////////////////////////////////w8PD/ubm5//f39///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==" rel="shortcut icon" type="image/x-icon">
+  <link rel="stylesheet" href="../../css/bass.css">
+  <link rel="stylesheet" href="../../css/article.css">
+  <link rel="stylesheet" href="../../css/iconfont.css">
+  <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
+  <script src="../../js/bass.js"></script>
+  <script src="../../js/template-web.js"></script>
+  <title>技术</title>
+  <style>
+    h2 {
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    p {
+      font-size: 12px;
+      font-weight: 400;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>这是一行大标题啊</h2>
+  <p><span>Python</span><span>2019年10月12日</span></p>
+</body>
+<script type=" text/template" id="tmp1">
+</script>
+<script type=" text/template" id="tmp2">
+</script>
+<script type="text/javascript">
+  // http://www.caibaojian.com:80/fisker/post/0703/window.location.html?ver=1.0&id=6#imhere
+  // 我们可以用javascript获得其中的各个部分
+  // 1, window.location.href-----------整个URl字符串(在浏览器中就是完整的地址栏)
+  // 本例返回值: http://www.caibaojian.com:80/fisker/post/0703/window.location.html?ver=1.0&id=6#imhere
+
+  // 2,window.location.protocol---------URL 的协议部分
+  // 本例返回值:http:
+
+  // 3,window.location.host----------URL 的主机部分
+  // 本例返回值:www.caibaojian.com
+
+  // 4,window.location.port-----URL 的端口部分
+  // 如果采用默认的80端口(update:即使添加了:80)，那么返回值并不是默认的80而是空字符
+  // 本例返回值:""
+
+  // 5,window.location.pathname(URL 的路径部分(就是文件地址)）
+  // 本例返回值:/fisker/post/0703/window.location.html
+
+  // 6,window.location.search-------查询(参数)部分
+  // 除了给动态语言赋值以外，我们同样可以给静态页面,并使用javascript来获得相信应的参数值
+  // 本例返回值:?ver=1.0&id=6
+
+  // 7,window.location.hash-------锚点
+  // 本例返回值:#imhere
+  // 获取地址栏的文章参数
+  console.log(window.location.search)
+  let ArticleList = {
+    list: [{
+      id: 1,
+      userImg: '../../img/色块.jpg',
+      type: 'Python类别',
+      date: '2019年12月10日',
+      mainTitle: '标题长度，超x个字符转成不可名状的点点的点点的点点的点点哈哈哈点点哈哈哈哈哈哈哈',
+      subheading: '震惊！这竟然是一行副标题？？？',
+      articleImg: '../../img/lb-js.jpg'
+    }]
+  }
+  $('#article').html(template('tmp1', ArticleList))
+  // 从地址栏获取要查看文章的参数
+  // 点击了筛选
+  function select(e) {
+    console.log('点击筛选')
+    selectID = []
+    // 筛选显示的标签
+    let labels = {
+      // 标签数据
+      list: [{
+          id: 1,
+          name: 'HTML5'
+        },
+        {
+          id: 2,
+          name: 'CSS3'
+        },
+        {
+          id: 3,
+          name: 'JavasScript'
+        },
+        {
+          id: 4,
+          name: 'ES6'
+        },
+        {
+          id: 5,
+          name: 'Vue'
+        },
+        {
+          id: 6,
+          name: 'Node.js'
+        },
+        {
+          id: 7,
+          name: '面试题'
+        },
+        {
+          id: 8,
+          name: 'Python'
+        }
+      ]
+    }
+    $('#label').html(template('tmp1', labels))
+    $('.shaixuan').toggleClass('blue')
+    $('.jiaobiao').toggleClass('jiaobiaoUp')
+    $("#selectDialog").toggleClass('hidden')
+  }
+  // 点击了某一标签
+  function djLabel(e, id) {
+    // 判断selectID中有没有这个id，有的话移除，没有的话添加
+    selectID.indexOf(id) < 0 ? selectID.push(id) : selectID.splice(selectID.indexOf(id), 1)
+    $(e).toggleClass('selectLabel')
+  }
+  // 取消筛选
+  function cancel() {
+    $('.shaixuan').toggleClass('blue')
+    $('.jiaobiao').toggleClass('jiaobiaoUp')
+    $("#selectDialog").toggleClass('hidden')
+  }
+  // 确认筛选
+  function determine() {
+    $('.shaixuan').toggleClass('blue')
+    $('.jiaobiao').toggleClass('jiaobiaoUp')
+    $("#selectDialog").toggleClass('hidden')
+    console.log('已筛选，筛选中的id是' + selectID)
+  }
+</script>
+
+</html>

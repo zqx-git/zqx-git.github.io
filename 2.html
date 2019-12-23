@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.bootcss.com/jquery/3.4.0/jquery.min.js"></script>
+  <title>Document</title>
+  <style>
+    .text {
+      width: 100%;
+      text-align: left;
+    }
+
+    p {
+      float: left;
+      width: 14px;
+      height: 300px;
+      font-size: 14px;
+      margin: 10px;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 要加载的内容盒子 -->
+  <div class="text">
+  </div>
+</body>
+</body>
+<script type="text/javascript">
+  // 思路：获取text下面的所有p标签,先循环打印第一个p标签的span文字,当第一个p标签的内容被打印出来之后,进行第二个p标签的循环打印,以此类推
+  // 要加载的文字
+  var text = '黑夜给了我，黑色的眼睛.我却用它翻白眼。'
+  // 正则校验
+  var reg = /[,；|，；|;；|；；|:；|：；|。;|.;]/g;
+  // 根据正则匹配，将字符串切割成数组
+  var arr = text.split(reg)
+  // 将需要的标签渲染到加载内容的盒子
+  for (var j = 0; j < arr.length; j++) {
+    let pp = '<p><span></span><span></span></p>'
+    $(".text").append(pp)
+  }
+  // 现在标签有了，内容数据也有了
+  // 此时.text标签结构是这样的：
+  // <div class="text">
+  // <p><span></span><span></span></p>
+  // <p><span></span><span></span></p>
+  // <p><span></span><span></span></p>
+  // </div>
+  // 内容数据是这样的：
+  // arr = ["黑夜给了我", "黑色的眼睛", "我却用它翻白眼", ""]
+
+  // 声明打字机方法
+  function daziji(i) {
+    // 首先获取.text下面的所有p标签
+    let ps = $('.text').children('p')
+    // 如果i的值和.text下面的所有p标签的长度一样，说明每一个p标签都已经被渲染打印了，即已经全部打印结束
+    // 若已经全部打印结束，强制结束 
+    if (i == ps.length) return false
+    // 不强制结束继续
+    // 声明变量，记录当前光标的位置
+    let index = 0
+    let dazi = setInterval(function () {
+      // p标签下的第一个span标签的文本内容设置为I,用字母I当光标
+      ps[i].childNodes[1].innerText = 'I'
+      // 光标闪烁效果
+      $(ps[i].childNodes[1]).fadeOut(300).fadeIn(300)
+      // p标签下的第一个span标签的文本内容设置为 arr[i]的0-index的位置，index++用来设置之后自动自身加1
+      ps[i].childNodes[0].innerText = arr[i].substring(0, index++)
+      // 当index值大于当前文本的长度，说明当前行打完了，打字结束
+      if (index > arr[i].length) {
+        // 移除光标节点
+        $(ps[i].childNodes[1]).remove()
+        // 停止打印动画
+        clearInterval(dazi)
+        // 开启下一行
+        daziji(++i)
+      }
+      // 400毫秒执行一次
+    }, 400)
+  }
+  // 声明变量，用于循环标签个数，初始化为0，即从第一个标签开始
+  let i = 0
+  // 调用打字机方法，传值i
+  daziji(i)
+</script>
+
+</html>

@@ -13,3 +13,12 @@ fontSize()
 window.onresize = function() {
   fontSize()
 }
+// 消息提示框
+function message(info, type = "info") {
+  document.getElementsByTagName("body")[0].innerHTML +=
+    '<p class="info ' + type + '">' + info + "</p>"
+  setTimeout(
+    'document.getElementsByTagName("body")[0].removeChild(document.getElementsByClassName("info")[0] || "")',
+    1500
+  )
+}

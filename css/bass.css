@@ -3,6 +3,7 @@ body,
 div,
 ul,
 li,
+img,
 h1,
 h2,
 h3,
@@ -12,8 +13,116 @@ h6,
 p {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
+html,
+body {
+  background-color: #f8f4f4;
+}
+
+img,
+fieldset {
+  border: 0 none
+}
+
+input,
+textarea {
+  font-size: 12px;
+}
+
+button:focus {
+  outline: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+input::input-placeholder {
+  color: #b2b2b2;
+}
+
+
+input::-webkit-input-placeholder {
+  color: #b2b2b2;
+}
+
+input::-moz-input-placeholder {
+  color: #b2b2b2;
+}
+
+input::-ms-input-placeholder {
+  color: #b2b2b2;
+}
+
+input::-o-input-placeholder {
+  color: #b2b2b2;
+}
+
+textarea {
+  resize: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ul,
+ol,
 li {
-  list-style: none;
+  list-style: none outside none;
+}
+
+
+a {
+  color: #003d7e;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  width: 100%;
+}
+
+/* 元素显示隐藏 */
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+/* 消息提示框 */
+.info {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 48px;
+  line-height: 48px;
+  width: 208px;
+  background-color: #fff;
+  font-size: 14px;
+  color: #FFFFFF;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #00000080;
+}
+
+.error {
+  background-color: #fef0f0;
+  border-color: #fde2e2;
+  color: #f56c6c;
+}
+
+.success {
+  color: #67c23a;
+  background-color: #f0f9eb;
+  border: 1px solid #ebeef5;
 }
