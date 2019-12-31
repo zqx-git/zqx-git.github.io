@@ -26,6 +26,7 @@ body {
   font-size: 15px;
   text-align: left;
   color: #333333;
+  pointer-events: none;
 }
 
 .search h5::after {
@@ -41,6 +42,7 @@ body {
   border-style: solid;
   transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
   -webkit-transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  pointer-events: auto;
 }
 
 .search div {

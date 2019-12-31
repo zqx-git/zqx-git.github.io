@@ -17,7 +17,7 @@
 
 <body>
   <div class="search">
-    <h5>技术文章</h5>
+    <h5 onclick="cancel()">技术文章</h5>
     <div>
       <span class="shaixuan" onclick="select()">筛 选 </span>
       <span class="jiaobiao" onclick="select()"></span>
@@ -127,6 +127,10 @@
   $('#article').html(template('tmp2', ArticleList))
 
   let selectID = []
+  // 点击了返回
+  function cancel() {
+    console.log('点击了返回')
+  }
   // 点击了筛选
   function select(e) {
     console.log('点击筛选')
