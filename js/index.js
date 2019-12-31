@@ -57,7 +57,7 @@ function getOne() {
       console.log(success)
       if (success.code == 200) {
         text = success.newslist[0].content
-        var reg = /[,；|，；|;；| ；|；；|:；|：；|。;|.;]/g
+        var reg = /[,；|，；|;;|；;|:；|：；|。；|.；|？；|?；| ；]/g
         arr = text.split(reg)
         for (var j = 0; j < arr.length; j++) {
           let pp = "<p><span></span><span></span></p>"
