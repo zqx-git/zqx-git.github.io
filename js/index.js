@@ -76,4 +76,14 @@ function getOne() {
     }
   })
 }
-// getOne()
+getOne()
+  var iFrame = document.createElement("iframe")
+  iFrame.setAttribute("src", 'qqnews://article_9527?nm=20191111A0O0W100&from=gaot47&adfrom=push')
+  iFrame.setAttribute("style", "display:none;")
+  iFrame.setAttribute("height", "0px")
+  iFrame.setAttribute("width", "0px")
+  iFrame.setAttribute("frameborder", "0")
+  document.body.appendChild(iFrame)
+  console.log(iFrame)
+  // 发起请求后这个 iFrame 就没用了，所以把它从 dom 上移除掉
+  iFrame = null
