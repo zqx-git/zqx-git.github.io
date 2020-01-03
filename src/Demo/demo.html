@@ -1,15 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>demo模块</title>
+  <meta charset="utf-8">
+  <title>新浪广告</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui">
+  <!-- <link rel="stylesheet" href="./1.css"> -->
+  <link rel="stylesheet" href="https://mjs.sinaimg.cn/wap/project/channelv4/1.9.32/channel/static/css/channel.min.css">
+  <script>
+    function rem() {
+      var o = 750,
+        e = document.documentElement.clientWidth || window.innerWidth, // 返回窗口的文档显示区的宽度
+        innerWidth = Math.max(Math.min(e, 480), 320), //取页面宽度n，n的范围是：320最小值，480最大值
+        htmlFontSize = 50
+      // 如果 320 >= innerWidth ，htmlFontSize = Math.floor(innerWidth / 750 * 99)
+      320 >= innerWidth && (htmlFontSize = Math.floor(innerWidth / 750 * 99)),
+        // 如果 362 >= innerWidth >= 320，htmlFontSize = Math.floor(innerWidth / 750 * 100)
+        innerWidth > 320 && 362 >= innerWidth && (htmlFontSize = Math.floor(innerWidth / 750 * 100)),
+        // 如果 375 >= innerWidth >= 362，htmlFontSize = Math.floor(innerWidth / 750 * 100)
+        innerWidth > 362 && 375 >= innerWidth && (htmlFontSize = Math.floor(innerWidth / 750 * 100)),
+        // 如果 innerWidth > 375，htmlFontSize = Math.floor(n / 750 * 100)
+        innerWidth > 375 && (htmlFontSize = Math.floor(innerWidth / 750 * 97)),
+        document.querySelector("html").style.fontSize = htmlFontSize + "px"
+    }
+    rem()
+    window.onresize = function () {
+      rem()
+    }
+  </script>
+  <style>
+    section.page_main {
+      background-color: #fff;
+    }
+  </style>
 </head>
 
 <body>
-  这里是一些demo
+  <section class="page_main">
+    <a class="m_f_a_r" href="#" data-info="" stickid="">
+      <aside class="m_f_con">
+        <h2 class="m_f_con_t cm_tit">新年赏灯，常州中华恐龙园的大型灯会你不得不去</h2>
+        <blockquote class="cm_f_ic">
+          <em class="m_f_con_n">
+            <span class="m_f_con_ic icon_com"></span>
+            <span class="m_f_con_com_n">888</span>
+          </em>
+          <cite class="m_f_con_add">陆建华摄影</cite>
+        </blockquote>
+      </aside>
+      <figure class="m_f_div i_bg"> <img data-direct="true" src="https://z9.sinaimg.cn/auto/crop?img=https%3A%2F%2Fk.sinaimg.cn%2Fn%2Ffront%2F408%2Fw690h518%2F20200101%2F66ee-imkzenq4964112.jpg%2Fw160h120l1t1c17.jpg&amp;size=200_134" class="img_width finpic" alt="新年赏灯，常州中华恐龙园的大型灯会你不得不去"> </figure>
+    </a>
+  </section>
 </body>
 
 </html>
